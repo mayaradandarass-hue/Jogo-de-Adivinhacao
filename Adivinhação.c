@@ -11,7 +11,6 @@ int main() {
     int ultimo_numero;
     int jogarnovamente;
     double pontos = 1000;
-    ;
     int intervalo1, intervalo2;
     
 
