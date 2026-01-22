@@ -39,6 +39,7 @@ int main() {
   while (true){
     int nivel;
     double pontos = 1000;
+    int numero_chutado = 0;
 
     printf("\nEscolha o intervalo em que você deseja adivinhar o número secreto.\n");
     printf("Intervalo 1: ");
@@ -77,6 +78,7 @@ int main() {
         for (int i = 1; i <= tentativas; i++){
             printf("\n%dº tentativa de %d\n", i, tentativas);
             printf("Digite seu chute: ");
+            numero_chutado = chute;
             scanf("%d", &chute);
 
             if(chute < 0){
@@ -87,6 +89,12 @@ int main() {
 
             if (chute < min || chute > max){
                 printf("\nVocê deve digitar um número entre %d e %d.\n", min, max);
+                i--;
+                continue;
+            }
+
+            if (numero_chutado == chute){
+                printf("\nVocê já chutou esse número!\n");
                 i--;
                 continue;
             }

@@ -55,6 +55,7 @@ while True:
     acertou = False
     pontos = 1000 
     nivel = ("(1)Fácil (2)Médio (3)Difícil")
+    numero_chutado = 0;
 
     print("\nEscolha o intervalo em que você deseja adivinhar o número secreto.\n")
     intervalo1 = int(input("Intervalo 1: "))
@@ -86,6 +87,7 @@ while True:
     for i in range(1, tentativas + 1):
         while True:
             print(f"\n{tentativas_validas + 1}º tentativa de {tentativas}\n")
+            numero_chutado = chute
             chute = int(input(f"Digite seu chute: "))
 
             if chute < 0:
@@ -94,6 +96,10 @@ while True:
 
             if chute < min or chute > max:
                 print(f"\nVocê deve digitar um número entre {min} e {max}!\n")
+                continue
+
+            if numero_chutado == chute:
+                print("\nVocê já chutou esse número!\n")
                 continue
             
             tentativas_validas += 1
@@ -153,8 +159,8 @@ while True:
         print('            J###                         ###L              \n')
         print('            {###K                       J###K              \n')
         print('            ]####K      ___aaa___      J####F              \n')
-        print('        __gmM######_  w#P""   ""9#m  _d#####Mmw__          Você perdeu! Tente novamente!\n')
-        print(f'     _g##############mZ_         __g##############m_        O número secreto era: {numerosecreto}\n')
+        print(f'        __gmM######_  w#P""   ""9#m  _d#####Mmw__          O número secreto era: {numerosecreto}\n')
+        print('     _g##############mZ_         __g##############m_        Você perdeu! Tente novamente!\n')
         print('   _d####M@PPPP@@M#######Mmp gm#########@@PPP9@M####m_     \n')
         print('  a###""          ,Z"#####@" "######"g,          ""M##m    \n')
         print(' J#@"             0L  "*##     ##@"  J#              *#K   \n')
