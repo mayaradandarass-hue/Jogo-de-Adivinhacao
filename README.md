@@ -29,7 +29,7 @@ Um jogo interativo de adivinhação implementado em **C** e **Python**, onde o j
 **Como Compilar e Executar:**
 ```bater
 gcc -o Adivinhação Adivinhação.c
-. ./Adivinhação
+./Adivinhação
 ```
 
 ---
